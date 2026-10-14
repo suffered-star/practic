@@ -1,20 +1,28 @@
 #define _CRT_SECURE_NO_WARNINGS
 #include <stdio.h>
-#include <stdint.h>
 
 int main(void) {
-    int input;
-    scanf("%d", &input);
-    uint8_t value = (uint8_t)input;
+    long double number, number_plus;
+    double big, big_plus;
+    float small, small_plus;
 
-    uint8_t add_res = value + 10;
-    printf("ADD: %u\n", (unsigned int)add_res);
+    printf("Введите число: ");
+    scanf("%Lf", &number);
 
-    uint8_t mul2_res = value * 2;
-    printf("MUL2: %u\n", (unsigned int)mul2_res);
+    big = number;
+    small = number;
 
-    uint8_t sqr_res = value * value;
-    printf("SQR: %u\n", (unsigned int)sqr_res);
+    number_plus = number + 1;
+    big_plus = big + 1;
+    small_plus = small + 1;
+
+    printf("FLOAT: %.6f\n", small);
+    printf("DOUBLE: %.6f\n", big);
+    printf("LDOUBLE: %.6Lf\n", number);
+
+    printf("FLOAT+1: %.6f\n", small_plus);
+    printf("DOUBLE+1: %.6f\n", big_plus);
+    printf("LDOUBLE+1: %.6Lf\n", number_plus);
 
     return 0;
 }
